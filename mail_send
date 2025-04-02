@@ -1,0 +1,11 @@
+import win32com.client as win32
+from datetime import datetime, timedelta
+import schedule
+def color_mail():
+    outlook = win32.Dispatch('Outlook.Application')
+    mail = outlook.CreateItem(0)
+    mail.To = 'aniket.singh3@cognizant.com'
+    mail.Subject = 'Notifying that the color matches.'
+    mail.Body = f"Value of color is Red"
+    mail.Send()
+color_mail()
